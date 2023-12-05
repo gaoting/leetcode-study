@@ -5,7 +5,6 @@
  * [4] 寻找两个正序数组的中位数
  */
 
-
 // @lcpr-template-start
 
 // @lcpr-template-end
@@ -15,12 +14,14 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findMedianSortedArrays = function(nums1, nums2) {
-
+var findMedianSortedArrays = function (nums1, nums2) {
+  const arr = [...nums1, ...nums2];
+  arr.sort((a, b) => a - b);
+  return arr.length % 2 === 1
+    ? arr[(arr.length - 1) / 2].toFixed(5)
+    : ((arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2).toFixed(5);
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -32,4 +33,3 @@ var findMedianSortedArrays = function(nums1, nums2) {
 // @lcpr case=end
 
  */
-
