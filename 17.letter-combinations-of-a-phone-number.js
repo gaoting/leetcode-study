@@ -10,6 +10,7 @@
 // @lcpr-template-end
 // @lc code=start
 function letterCombinations(digits) {
+  if(!digits) return []
   const maps = {
     "2": ["a", "b", "c"],
     "3": ["d", "e", "f"],
